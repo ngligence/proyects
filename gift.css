@@ -1,0 +1,107 @@
+/* RESET */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* FONDO GENERAL */
+body {
+    min-height: 100vh;
+    background: linear-gradient(135deg, #ff9a9e, #fad0c4);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Playfair Display', serif;
+    overflow: hidden;
+}
+
+/* CONTENEDOR */
+.contenedor {
+    background: rgba(255, 255, 255, 0.88);
+    padding: 40px 30px;
+    border-radius: 25px;
+    max-width: 700px;
+    text-align: center;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.25);
+    animation: aparecer 1.5s ease;
+    position: relative;
+    z-index: 2;
+}
+
+/* TITULO */
+h1 {
+    font-family: 'Dancing Script', cursive;
+    font-size: 3rem;
+    color: #e60073;
+    margin-bottom: 25px;
+}
+
+/* POEMA */
+.poema p {
+    font-size: 1.2rem;
+    color: #333;
+    line-height: 1.8;
+    margin-bottom: 20px;
+}
+
+/* FOOTER */
+footer span {
+    display: block;
+    margin-top: 20px;
+    font-size: 1rem;
+    color: #b30059;
+}
+
+/* ANIMACIÓN CONTENEDOR */
+@keyframes aparecer {
+    from {
+        opacity: 0;
+        transform: scale(0.9);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+/* CORAZONES */
+.corazones::before,
+.corazones::after {
+    content: "💖 💕 💘 💗 💓";
+    position: absolute;
+    font-size: 2rem;
+    width: 100%;
+    text-align: center;
+    animation: flotar 12s linear infinite;
+    opacity: 0.4;
+}
+
+.corazones::after {
+    animation-duration: 18s;
+    font-size: 1.5rem;
+}
+
+@keyframes flotar {
+    from {
+        transform: translateY(100vh);
+    }
+    to {
+        transform: translateY(-120vh);
+    }
+}
+
+/* RESPONSIVE */
+@media (max-width: 600px) {
+    h1 {
+        font-size: 2.4rem;
+    }
+
+    .poema p {
+        font-size: 1.05rem;
+    }
+
+    .contenedor {
+        margin: 20px;
+    }
+}
